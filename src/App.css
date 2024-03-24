@@ -1,0 +1,83 @@
+.calculator-container {
+  width: 400px; /* Ajuster la largeur du conteneur selon vos besoins */
+  margin: auto; /* Centrer horizontalement */
+}
+
+.container {
+  background-color: #87CEEB;
+  border: solid 3px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(0, 1fr) repeat(5, minmax(0, 1fr));
+  gap: 5px;
+  padding: 10px;
+}
+
+/* Calculator Display */
+#calc-display {
+  grid-column: 1 / -1;
+  grid-row: 1 / 3;
+  width: 95%;
+  height: 95%;
+  background-color: #A9A9A9;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: "Digital", sans-serif; /* Utiliser la police Digital et sans-serif en cas d'échec de chargement */
+  padding: 0 10px;
+  font-size: 2em; /* Ajuster la taille de la police selon vos besoins */
+}
+
+#dis, #eq { 
+  padding-right: 10%; 
+}
+
+#dis {
+  font-size: 3vw; /* Ajuster la taille de la police selon vos besoins */
+  margin-top: 20px;
+}
+
+#eq { 
+  font-size: 1.5vw; /* Ajuster la taille de la police selon vos besoins */
+}
+
+/* Calculator Buttons */
+button {
+  width: calc(100% - 10px); /* Ajuster la largeur des boutons pour tenir compte de l'espacement */
+  height: calc(100% - 10px); /* Ajuster la hauteur des boutons pour tenir compte de l'espacement */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  margin: 5px; /* Espacement entre les boutons */
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 2em; /* Ajuster la taille de la police selon vos besoins */
+}
+
+button:hover {
+  opacity: 0.7;
+  border: 1.5px solid white;
+}
+
+button:focus { outline: 0; }
+
+.num { background-color: #A9A9A9; }
+
+.oper { background-color: orange; }
+
+/* Responsive for Small Screens */
+@media only screen and (max-width: 767px) {
+  .container{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr) repeat(5, minmax(0, 1fr));
+    max-width: 300px; /* Ajuster la largeur maximale selon vos besoins */
+  }
+  
+  #dis { font-size: 6vw; } /* Ajuster la taille de la police selon vos besoins */
+  #eq { font-size: 2vw; } /* Ajuster la taille de la police selon vos besoins */
+}
